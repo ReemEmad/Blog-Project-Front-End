@@ -48,11 +48,14 @@ class Register extends Component {
   };
 
   onFinish = async (values) => {
-    const response = await axios.post("http://localhost:4000/users/register", {
-      fullname: values.name,
-      username: values.email,
-      password: values.password,
-    });
+    const response = await axios.post(
+      "https://sampleblogmernapp.herokuapp.com/users/register",
+      {
+        fullname: values.name,
+        username: values.email,
+        password: values.password,
+      }
+    );
     localStorage.setItem("token", response.headers["x-auth-token"]);
     this.props.history.push("/home");
     window.location.reload(true);

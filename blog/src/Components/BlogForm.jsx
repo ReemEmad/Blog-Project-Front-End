@@ -3,7 +3,7 @@ import { Form, Input, Button, Row, Col } from "antd";
 import { Upload, message } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import axios from "axios";
-const apiEndpoint = "http://localhost:4000/articles/";
+const apiEndpoint = "https://sampleblogmernapp.herokuapp.com/articles/";
 
 class BlogForm extends Component {
   state = {

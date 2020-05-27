@@ -20,7 +20,7 @@ export default class Blogs extends Component {
   getData = () => {
     axios
       .get(
-        `http://localhost:4000/articles?page=${this.state.currentPage}&limit=${this.state.limit}`
+        `https://sampleblogmernapp.herokuapp.com/articles?page=${this.state.currentPage}&limit=${this.state.limit}`
       )
       .then((response) => {
         this.setState({

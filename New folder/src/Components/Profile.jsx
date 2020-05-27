@@ -16,7 +16,9 @@ class Profile extends Component {
 
   async componentDidMount() {
     axios
-      .get(`http://localhost:4000/users/${this.props.match.params.id}`)
+      .get(
+        `https://sampleblogmernapp.herokuapp.com/users/${this.props.match.params.id}`
+      )
       .then((response) => {
         this.setState({ user: response.data });
       });

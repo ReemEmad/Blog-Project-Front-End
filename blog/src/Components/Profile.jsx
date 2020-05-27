@@ -57,7 +57,7 @@ class Profile extends Component {
     });
     axios
       .patch(
-        `http://localhost:4000/articles/${this.state.selectedArticle._id}`,
+        `https://sampleblogmernapp.herokuapp.com/articles/${this.state.selectedArticle._id}`,
         {
           title: values.title,
           body: values.body,
@@ -114,7 +114,9 @@ class Profile extends Component {
   getData = () => {
     this.setState({ userBlogsLoading: true, userFollowingLoading: true });
     axios
-      .get(`http://localhost:4000/articles/user/${this.props.match.params.id}`)
+      .get(
+        `https://sampleblogmernapp.herokuapp.com/articles/user/${this.props.match.params.id}`
+      )
       .then((response) => {
         const articles = response.data;
         // console.log("the articles is ", response.data);
@@ -127,7 +129,7 @@ class Profile extends Component {
 
     axios
       .get(
-        `http://localhost:4000/users/following/${this.props.match.params.id}`
+        `https://sampleblogmernapp.herokuapp.com/users/following/${this.props.match.params.id}`
       )
       .then((response) => {
         const following = response.data;
@@ -142,7 +144,9 @@ class Profile extends Component {
 
     this.setState({ userLoading: true, userBlogsLoading: true }, () => {
       axios
-        .get(`http://localhost:4000/users/${this.props.match.params.id}`)
+        .get(
+          `https://sampleblogmernapp.herokuapp.com/users/${this.props.match.params.id}`
+        )
         .then((response) => {
           // console.log("the user is", response.data);
           this.setState({
@@ -172,7 +176,9 @@ class Profile extends Component {
 
     console.log("deleted");
     try {
-      await axios.delete(`http://localhost:4000/articles/${article._id}`);
+      await axios.delete(
+        `https://sampleblogmernapp.herokuapp.com/articles/${article._id}`
+      );
       this.setState({
         isLoading: false,
         visible: false,
@@ -197,7 +203,7 @@ class Profile extends Component {
     });
     try {
       const res = await axios.post(
-        `http://localhost:4000/users/${this.props.match.params.id}/follow-user`
+        `https://sampleblogmernapp.herokuapp.com/users/${this.props.match.params.id}/follow-user`
       );
       console.log(this.state.user);
       this.setState(
@@ -250,7 +256,7 @@ class Profile extends Component {
 
     try {
       await axios.post(
-        `http://localhost:4000/users/${this.props.match.params.id}/unfollow-user`
+        `https://sampleblogmernapp.herokuapp.com/users/${this.props.match.params.id}/unfollow-user`
       );
       this.setState(
         {

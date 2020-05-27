@@ -39,7 +39,7 @@ class App extends Component {
   getData = () => {
     axios
       .get(
-        `http://localhost:4000/articles?page=${this.state.currentPage}&limit=${this.state.limit}`
+        `https://sampleblogmernapp.herokuapp.com/articles?page=${this.state.currentPage}&limit=${this.state.limit}`
       )
       .then((response) => {
         this.setState({
@@ -52,7 +52,7 @@ class App extends Component {
         console.log(err);
       });
     axios
-      .get("http://localhost:4000/user/blog")
+      .get("https://sampleblogmernapp.herokuapp.com/user/blog")
       .then((response) => {
         this.setState({ userBlogs: response.data });
       })

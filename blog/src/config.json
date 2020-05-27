@@ -1,3 +1,3 @@
 {
-  "apiEndpoint": "http://localhost:4000/user/blog"
+  "apiEndpoint": "https://sampleblogmernapp.herokuapp.com/user/blog"
 }

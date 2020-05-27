@@ -4,7 +4,7 @@ import { Upload, message } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import axios from "axios";
 //const apiEndpoint = `http://localhost:4000/articles/${this.props.match.params.id}`;
-const apiEndpoint = "http://localhost:4000/articles/";
+const apiEndpoint = "https://sampleblogmernapp.herokuapp.com/articles/";
 class BlogForm extends Component {
   state = {
     articles: [],
@@ -15,7 +15,7 @@ class BlogForm extends Component {
   async componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
       const { data: articles } = await axios.get(
-        `http://localhost:4000/articles/${this.props.match.params.id}`
+        `https://sampleblogmernapp.herokuapp.com/articles/${this.props.match.params.id}`
       );
       this.setState({ articles });
       this.data = this.state.data;

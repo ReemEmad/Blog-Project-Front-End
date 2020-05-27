@@ -5,7 +5,9 @@ class BlogDetails extends Component {
   state = { data: [], isLoading: true };
   getBlogDetails = () => {
     axios
-      .get(`http://localhost:4000/articles/${this.props.match.params.id}`)
+      .get(
+        `https://sampleblogmernapp.herokuapp.com/articles/${this.props.match.params.id}`
+      )
       .then((response) => {
         console.log("response.data", response.data);
         this.setState({ data: response.data, isLoading: false });

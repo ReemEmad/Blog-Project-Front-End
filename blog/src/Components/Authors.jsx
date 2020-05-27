@@ -13,7 +13,9 @@ class Authors extends Component {
       isLoading: true,
     });
     try {
-      const res = await axios.get("http://localhost:4000/users/");
+      const res = await axios.get(
+        "https://sampleblogmernapp.herokuapp.com/users/"
+      );
       this.setState({
         isLoading: false,
         visible: false,

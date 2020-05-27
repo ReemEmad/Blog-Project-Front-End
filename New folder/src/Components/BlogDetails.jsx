@@ -6,7 +6,9 @@ class BlogDetails extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:4000/articles/${this.props.match.params.id}`)
+      .get(
+        `https://sampleblogmernapp.herokuapp.com/articles/${this.props.match.params.id}`
+      )
       .then((response) => {
         this.setState({ data: response.data });
       });
